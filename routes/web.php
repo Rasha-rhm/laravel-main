@@ -33,7 +33,7 @@ Route::group(['middleware'=>'customAuth'],function(){
    
     
     Route::get('/about', function () {
-        return view('customer\about'); });
+        return view('about'); });
 
 /*    Route::get('/cart', function () {
         return view('cart'); });
