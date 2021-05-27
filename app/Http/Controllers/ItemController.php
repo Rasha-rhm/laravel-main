@@ -19,14 +19,14 @@ class ItemController extends Controller
     public function index()
     {
         $itms=ItemModel::all();
-    return view('admin\item',compact('itms'));
+    return view('item',compact('itms'));
 
     }
 
     public function viewM()
     {
         $itms=ItemModel::all();
-    return view('customer\menu',compact('itms'));
+    return view('menu',compact('itms'));
 
     }
 
@@ -38,7 +38,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        return view('admin\add');
+        return view('add');
     }
 
     /**
@@ -95,7 +95,7 @@ class ItemController extends Controller
     public function edit($id)
     {
         $itms=ItemModel::find($id);
-        return view('admin\EditItem',compact('itms'));
+        return view('EditItem',compact('itms'));
 
 
     }
@@ -181,7 +181,7 @@ function cartList()
     ->select('item_models.*','cart.id as cartid')
     ->get();
 
-    return view('customer\cartlist',['items'=>$items]);
+    return view('cartlist',['items'=>$items]);
 }
 function removeCart($id)
 {
@@ -197,7 +197,7 @@ function orderNow()
     ->select('item_models.*','cart.id as cartid')
     ->sum('item_models.price');
 
-    return view('customer\ordernow',['total'=>$total]);
+    return view('ordernow',['total'=>$total]);
 }
 function orderPlace(Request $req)
 {

@@ -23,23 +23,23 @@ class AdminController extends Controller
 
     public function adminviewhome()
     {
-        return view('admin\adminhome');
+        return view('adminhome');
     }
 
     public function custviewhome()
     {
-        return view('customer\customerhome');
+        return view('customerhome');
     }
     public function viewBooking()
     {
         $bview=Order::where('status','=','Booked')->get();
-        return view('admin\booking',compact('bview'));
+        return view('booking',compact('bview'));
     }
 
     public function custpay(Request $request)
     {
         //$getamt=request('amount');
-        return view('customer\Payment');
+        return view('Payment');
     }
 
     public function cpayportal()
@@ -54,7 +54,7 @@ class AdminController extends Controller
 
     public function psuccess()
     {
-        return view('customer\PaySuccess');
+        return view('PaySuccess');
     }
     /**
      * Show the form for creating a new resource.
@@ -124,12 +124,12 @@ class AdminController extends Controller
     public function fView()
     {
         $User = feedback::all();
-        return view('admin\viewfeedback')->with('User',$User);
+        return view('viewfeedback')->with('User',$User);
         //return view('management\viewfeedback');
     }
     public function fCreate()
     {
-        return view('customer\feedback');
+        return view('feedback');
     }
     public function fStore(Request $request)
     {
