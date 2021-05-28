@@ -142,7 +142,7 @@ class AdminController extends Controller
         echo "<script>alert('Feedback send successfully')</script>";
         return redirect('/CustHome');
     }
-    public function store(Request $request)
+    public function adstore(Request $request)
     {
         $getemail=request('lemail');
         $getpass=request('lpass');

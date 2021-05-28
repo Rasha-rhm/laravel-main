@@ -64,7 +64,7 @@ Route::get('/feedback',[AdminController::class,'fCreate']);
 Route::get('/viewfeedback',[AdminController::class,'fView']);
 Route::post('/ReadFeedback', [AdminController::class,'fStore']);
 Route::get('/signup',[AdminController::class,'createadm']);
-Route::post('/ReadAdmin',[AdminController::class,'store']);
+Route::post('/ReadAdmin',[AdminController::class,'adstore']);
 
 
 
