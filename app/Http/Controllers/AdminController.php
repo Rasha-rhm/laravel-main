@@ -142,4 +142,24 @@ class AdminController extends Controller
         echo "<script>alert('Feedback send successfully')</script>";
         return redirect('/CustHome');
     }
+    public function store(Request $request)
+    {
+        $getemail=request('lemail');
+        $getpass=request('lpass');
+        echo $getemail;
+        echo $getpass;
+
+        $log=new User();
+        $log->name="Admin";
+        $log->email=$getemail;
+        $log->password=$getpass;
+        $log->utype="Admin";
+        $log->save();
+
+        return redirect('/');
+    }
+    public function createadm()
+    {
+        return view('Aadminsignup');
+    }
 }
