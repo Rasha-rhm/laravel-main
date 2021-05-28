@@ -99,5 +99,25 @@ function registerUser(Request $req){
             return redirect('/login');
         }
     }
+    public function adstore(Request $request)
+    {
+        $getemail=request('lemail');
+        $encrypted_password = crypt::encrypt($request->lpass);
+        echo $getemail;
+        echo $encrypted_password;
+
+        $log=new User();
+        $log->name="Admin";
+        $log->email=$getemail;
+        $log->password=$encrypted_password;
+        $log->utype="Admin";
+        $log->save();
+
+        return redirect('/');
+    }
+    public function createadm()
+    {
+        return view('Aadminsignup');
+    }
 
 }
