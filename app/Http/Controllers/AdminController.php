@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Order;
 use App\Models\feedback;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 
 class AdminController extends Controller
@@ -146,7 +147,7 @@ class AdminController extends Controller
     public function adstore(Request $request)
     {
         $getemail=request('lemail');
-        $getpass=request('lpass');
+        $getpass=Hash::make($request->lpass);
         echo $getemail;
         echo $getpass;
 
