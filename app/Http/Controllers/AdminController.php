@@ -7,6 +7,7 @@ use Session;
 use Illuminate\Support\Facades\DB;
 use App\Models\Order;
 use App\Models\feedback;
+use App\Models\User;
 
 
 class AdminController extends Controller
