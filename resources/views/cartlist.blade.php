@@ -16,7 +16,7 @@
         <div class="col-sm-4">
         <div class="">
         <h2>{{$item->ItemName}}</h2>
-        <h5>{{$item->Price}}</h5>
+        <h5>{{$item->price}}</h5>
         </div>
 
         </div>

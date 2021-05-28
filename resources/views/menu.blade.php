@@ -18,7 +18,7 @@
 			        <td>{{ $itm->ItemID }}</td>
                                 <td><img width="150" height="100" src="{{ URL ::asset('assets/product_img/'.$itm->Image) }}"></td>
 			        <td>{{ $itm->ItemName }}</td>
-			        <td>{{ $itm->Price }}</td>
+			        <td>{{ $itm->price }}</td>
 			        <td><form action="/add_to_cart" method="POST">
     @csrf
     <input type="hidden" name="ItemID" value="{{ $itm->id }}">

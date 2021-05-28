@@ -69,7 +69,7 @@ class ItemController extends Controller
         $itm->ItemID=$getid;
         $itm->ItemName=$getname;
         $itm->Image=$name;
-        $itm->Price=$getprice;
+        $itm->price=$getprice;
         $itm->save();
 
         return redirect('/viewItem');
@@ -127,7 +127,7 @@ class ItemController extends Controller
         $itm =  ItemModel::find($id);
         $itm->ItemName=$getname;
         $itm->Image=$name;
-        $itm->Price=$getprice;
+        $itm->price=$getprice;
         $itm->save();
 
         return redirect('/viewItem');
@@ -191,8 +191,8 @@ function removeCart($id)
 function orderNow()
 {
     $userID=session::get('uid');
-    $total= DB::table('cart')
-    ->join('item_models','cart.ItemID','=','item_models.id')
+    $total= DB::table('item_models')
+    ->join('cart','cart.ItemID','=','item_models.id')
     ->where('cart.UserID',$userID)
     ->select('item_models.*','cart.id as cartid')
     ->sum('item_models.price');

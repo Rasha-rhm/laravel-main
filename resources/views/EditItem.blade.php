@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <td>Price</td>
-                <td><input type="text" name="price" value="{{$itms->Price}}" class="form-control"></td>
+                <td><input type="text" name="price" value="{{$itms->price}}" class="form-control"></td>
             </tr>
             <tr>
                 <td></td>

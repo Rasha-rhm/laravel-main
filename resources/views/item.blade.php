@@ -31,7 +31,7 @@
                                                     <td><img width="150" height="100" src="{{ URL ::asset('assets/product_img/'.$itm->Image) }}"></td>
 
 													<td>{{ $itm->ItemName }}</td>
-													<td>{{ $itm->Price }}</td>
+													<td>{{ $itm->price }}</td>
 													<td><a href="/itemdetail/{{$itm->id }}/edit" style="color: #1a1aff;">Update</a></td>
 													<td><a href="/itemdetail/{{$itm->id }}/del" style="color: #ff1a1a;">Delete</a></td>
 													

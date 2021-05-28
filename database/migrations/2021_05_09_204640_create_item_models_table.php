@@ -18,7 +18,7 @@ class CreateItemModelsTable extends Migration
             $table->integer('ItemID');
             $table->string('ItemName');
             $table->string('Image');
-            $table->integer('Price');
+            $table->integer('price');
             $table->timestamps();
         });
     }
