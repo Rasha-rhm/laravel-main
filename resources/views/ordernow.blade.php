@@ -32,8 +32,7 @@
     </div>
     <div class="form-group">
         <label for="pwd">Payment Method</label><br><br>
-        <input type="radio" value="cash" name="payment"> <span>online payment</span><br><br>
-        <input type="radio" value="cash" name="payment"> <span>pay on delivery</span><br><br>
+        <input type="radio" value="online payment" name="payment"> <span>online payment</span><br><br>
 </div>
     <button type="submit" class="btn btn-default">Order Now</button>
   </form>

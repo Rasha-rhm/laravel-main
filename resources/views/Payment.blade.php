@@ -68,14 +68,26 @@
                                         <input type="password" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="Three digits at back of your card" required="" placeholder="CVV">
                                     </div>
                                 </div>
-                                
+                                @php
+                            $amount=0;
+                            
+                            @endphp
+                            @foreach ($amt as $a)
+                            
+                            @php
+                            $amount=$amount+$a->amount;
+                            
+                            @endphp
+                            @endforeach
+
                                 <div class="row">
                                     <label class="col-md-12">Amount</label>
                                 </div>
                                 <div class="form-inline">
                                     <div class="input-group">
                                         <div class="input-group-prepend"><span class="input-group-text">Rs.</span></div>
-                                        <input type="text" name="payamt" class="form-control text-right" id="exampleInputAmount"  placeholder="X X X X">
+                                        <input type="text" name="payamt" class="form-control text-right" id="exampleInputAmount"  value="{{$amount+50}}" readonly
+>
                                         <div class="input-group-append"><span class="input-group-text">.00</span></div>
                                     </div>
                                 </div>

@@ -40,8 +40,15 @@ class AdminController extends Controller
 
     public function custpay(Request $request)
     {
-        //$getamt=request('amount');
-        return view('Payment');
+        $logid=session::get('uid');
+        $amt = DB::table('orders')
+            ->select('amount')
+            ->where('orders.UserID','=',"$logid")
+            ->where('orders.status','like',"pending")
+            ->get();
+
+        return view('Payment')->with('amt',$amt);
+        ;
     }
 
     public function cpayportal()
