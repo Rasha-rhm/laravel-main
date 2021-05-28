@@ -63,8 +63,8 @@ Route::get('/booking',[AdminController::class,'viewBooking']);
 Route::get('/feedback',[AdminController::class,'fCreate']);
 Route::get('/viewfeedback',[AdminController::class,'fView']);
 Route::post('/ReadFeedback', [AdminController::class,'fStore']);
-Route::get('/signup',[AdminController::class,'createadm']);
-Route::post('/ReadAdmin',[AdminController::class,'adstore']);
+Route::get('/signup',[RestoController::class,'createadm']);
+Route::post('/ReadAdmin',[RestoController::class,'adstore']);
 
 
 
