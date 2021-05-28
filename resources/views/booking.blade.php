@@ -15,18 +15,30 @@
     <div class="row">
     <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
     <br><h1 style="text-align:center;">BOOKINGS</h1><br><br>
-        
+    <table class="table">
+    <thead>
+        <tr>
+            <td>OrderId</td>
+            <td>UserId</td>
+            <td>Item</td>
+            <td>PaymentMethod</td>            
+            <td>Address</td> 
+            <td>Amount</td> 
+        </tr>
+    </thead>
+    <tbody>
+
    
         @foreach($bview as $b)
-        <div class="row" style="outline: thick solid #000; font-size:20px;" >
-        <h4><p style="text-align:center;">  {{$b->UserID}}</p></h4>
-        <div>
-         <h5> Item : {{$b->ItemID}}<br>
-            Address : {{$b->address}}<br>
-            Booking Time: <br></h5>
-        </div>		
-        </div>										
-		<br><br>
+        <tr>
+        <td> {{$b->id }}</td>
+        <td> {{$b->UserID }}</td>
+        <td> {{$b->Item }}</td>
+        <td> {{$b->payment_method}}</td>
+        <td> {{$b->address}}</td>
+        <td> {{$b->amount}}</td>
+    </tr>
+
         @endforeach
 
        

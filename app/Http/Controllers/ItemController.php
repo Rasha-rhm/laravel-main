@@ -205,13 +205,20 @@ function orderPlace(Request $req)
    $allcart= cart::where('UserID',$userID)->get();
     foreach($allcart as $cart)
     {
+        $amt =DB::table('item_models')
+        ->select('ItemName','price')
+        ->where('id','=',$cart['ItemID'])
+        ->first();
+
         $order= new Order;
-        $order->ItemID=$cart['ItemID'];
+        $order->Item=$amt->ItemName;
         $order->UserID=$cart['UserID'];
         $order->status="pending";
         $order->payment_method=$req->payment;
         $order->payment_status="pending";
         $order->address=$req->address;
+        $order->amount=$amt->price;
+
         $order->save();
         cart::where('UserID',$userID)->delete();
     }
